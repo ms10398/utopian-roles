@@ -6,11 +6,9 @@ const user = require('../models/users');
 /* GET home page. */
 router.get('/roles/:name', function(req, res, next) {
   let username = req.params.name
-  console.log(username);
   user.find({ name: username }, function (err, data) {
     if(err)
       console.log(err)
-    console.log(data)
     let isPresent = data.length
     if(isPresent > 0)
     {
